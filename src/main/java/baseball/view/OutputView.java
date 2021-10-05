@@ -6,7 +6,7 @@ import baseball.constant.GameMessageConstant;
 public class OutputView {
 
     public void strikeMsg(int strike) {
-        System.out.println(strike + GameMessageConstant.RESULT_MSG);
+        System.out.println(strike + GameMessageConstant.STRIKE_MSG);
     }
 
     public void ballMsg(int ball) {
@@ -18,12 +18,11 @@ public class OutputView {
     }
 
     public void strikeAndBallMsg(int strike, int ball) {
-        System.out.println(strike + GameMessageConstant.RESULT_MSG + " " +ball + GameMessageConstant.BALL_MSG);
+        System.out.println(strike + GameMessageConstant.STRIKE_MSG + " " +ball + GameMessageConstant.BALL_MSG);
     }
 
     public void endMsg(){
         System.out.println(GameMessageConstant.RESULT_MSG);
-        System.out.println(GameMessageConstant.CONTINUE_MSG);
     }
 
     public void continueErrorMsg() {
