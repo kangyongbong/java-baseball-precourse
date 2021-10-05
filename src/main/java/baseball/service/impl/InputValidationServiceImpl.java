@@ -56,7 +56,7 @@ public class InputValidationServiceImpl implements InputValidationService {
 
     @Override
     public boolean checkEmptyNumber(String num){
-        boolean result = (num.equals(""));
+        boolean result = (!num.equals(""));
         if (!result){
             outputView = new OutputView();
             outputView.emptyErrorMsg();
