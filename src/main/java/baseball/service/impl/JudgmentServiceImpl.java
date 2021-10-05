@@ -81,7 +81,7 @@ public class JudgmentServiceImpl implements JudgmentService {
 
     @Override
     public void strikeMsg(){
-        if(countStrike == 0 && countBall > 0){
+        if(countStrike > 0 && countBall == 0){
             outputView = new OutputView();
             outputView.strikeMsg(countStrike);
         }
