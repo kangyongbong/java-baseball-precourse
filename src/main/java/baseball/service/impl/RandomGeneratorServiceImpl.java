@@ -29,7 +29,7 @@ public class RandomGeneratorServiceImpl implements RandomGeneratorService {
 
     @Override
     public void validateNumber(int number) {
-        if (randomNumber.length() > 0 && randomNumber.indexOf("" + number) < 0) {
+        if (randomNumber.indexOf("" + number) < 0) {
             randomNumber.append(number);
         }
     }
