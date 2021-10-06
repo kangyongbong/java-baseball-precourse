@@ -12,10 +12,10 @@ public class InputValidationServiceImpl implements InputValidationService {
 
     @Override
     public boolean inputValidation(String inputNumber) {
+        if(!checkEmptyNumber(inputNumber)) return false;
         String replaceInput = inputNumber.replaceAll(" ","");
-        if(!checkRegNumber(replaceInput)) return false;
         if(!checkSizeNumber(replaceInput)) return false;
-        if(!checkEmptyNumber(replaceInput)) return false;
+        if(!checkRegNumber(replaceInput)) return false;
 
         return true;
     }
@@ -56,7 +56,7 @@ public class InputValidationServiceImpl implements InputValidationService {
 
     @Override
     public boolean checkEmptyNumber(String num){
-        boolean result = (!num.equals(""));
+        boolean result = !((num == null) || "".equals(num));
         if (!result){
             outputView = new OutputView();
             outputView.emptyErrorMsg();
