@@ -1,6 +1,6 @@
 package baseball;
 
-import baseball.model.constant.Constant;
+import baseball.constant.View;
 
 public class Application {
     public static void main(String[] args) {

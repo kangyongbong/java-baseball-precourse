@@ -1,2 +1,4 @@
-package baseball.view;public class input {
+package baseball.view;
+
+public class InputView {
 }

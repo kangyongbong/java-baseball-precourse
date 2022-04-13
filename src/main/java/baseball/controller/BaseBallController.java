@@ -1,2 +1,4 @@
-package baseball.controller;public class BaseBallController {
+package baseball.controller;
+
+public class BaseBallController {
 }

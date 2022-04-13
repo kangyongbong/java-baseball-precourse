@@ -1,4 +1,4 @@
 package baseball.model;
 
-public class Result {
+public class UserNumber {
 }
