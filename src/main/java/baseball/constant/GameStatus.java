@@ -5,4 +5,5 @@ public enum GameStatus {
     START
     , RESTART
     , ERROR
+    , END
 }
