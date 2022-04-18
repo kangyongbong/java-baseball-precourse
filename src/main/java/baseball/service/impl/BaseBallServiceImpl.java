@@ -39,7 +39,7 @@ public class BaseBallServiceImpl implements BaseBallService {
         return checkRestartData(inputRestart);
     }
 
-    private GameStatus checkRestartData(String inputRestart) {
+    public GameStatus checkRestartData(String inputRestart) {
         validateService.validateInputRestart(inputRestart);
         if ("1".equals(inputRestart)) {
             return GameStatus.RESTART;
@@ -58,7 +58,7 @@ public class BaseBallServiceImpl implements BaseBallService {
         randomNumber.setRandomNum(setRandom);
     }
 
-    private void convertToList(String inputNumber) {
+    public void convertToList(String inputNumber) {
         List<Integer> numbers = new ArrayList<>();
         for (String s : inputNumber.split("")) {
             numbers.add(Integer.parseInt(s));
@@ -67,7 +67,7 @@ public class BaseBallServiceImpl implements BaseBallService {
         userNumber.setGameNum(numbers);
     }
 
-    private void playGame(UserNumber userNumber, RandomNumber randomNumber) {
+    public void playGame(UserNumber userNumber, RandomNumber randomNumber) {
         Iterator<Integer> random = randomNumber.getRandomNum().iterator();
         judgment(random, userNumber.getGameNum());
     }
@@ -89,7 +89,7 @@ public class BaseBallServiceImpl implements BaseBallService {
         if (isBall(input, currIndex)) return;
     }
 
-    private boolean isStrike(Integer random, Integer input, int currIndex) {
+    public boolean isStrike(Integer random, Integer input, int currIndex) {
         if (random.equals(input)) {
             result.setCntStrike(result.getCntStrike() + 1);
             return true;
@@ -98,7 +98,7 @@ public class BaseBallServiceImpl implements BaseBallService {
         return false;
     }
 
-    private boolean isBall(Integer input, int currIndex) {
+    public boolean isBall(Integer input, int currIndex) {
         if (randomNumber.getRandomNum().contains(input)) {
             result.setCntBall(result.getCntBall() + 1);
             return true;
@@ -107,7 +107,7 @@ public class BaseBallServiceImpl implements BaseBallService {
         return false;
     }
 
-    private void isNothing() {
+    public void isNothing() {
         if (result.getCntStrike() + result.getCntBall() == 0) {
             result.setCntNothing(1);
         }
