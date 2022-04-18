@@ -1,16 +1,19 @@
 package baseball.model;
 
+import java.util.Collections;
+import java.util.List;
+
 public class UserNumber {
 
-    private int gameNum;
+    private List<Integer> gameNum;
     private int restartNum;
 
-    public int getGameNum() {
+    public List<Integer> getGameNum() {
         return gameNum;
     }
 
-    public void setGameNum(String gameNum) {
-        this.gameNum = Integer.parseInt(gameNum);
+    public void setGameNum(List<Integer> gameNum) {
+        this.gameNum = gameNum;
     }
 
     public int getRestartNum() {
