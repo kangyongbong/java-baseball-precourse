@@ -7,11 +7,11 @@ public class InputView {
 
     public String inputNumber(){
         System.out.print(ViewMessage.INPUT_NUMBER.getMessage());
-        return Console.readLine();
+        return Console.readLine().replaceAll(" ","");
     }
 
     public String inputRestart(){
         System.out.print(ViewMessage.RESTART.getMessage());
-        return Console.readLine();
+        return Console.readLine().replaceAll(" ","");
     }
 }
