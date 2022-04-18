@@ -2,23 +2,44 @@ package baseball.view;
 
 import baseball.constant.StateMessage;
 import baseball.constant.ViewMessage;
+import baseball.model.Result;
 
 public class OutputView {
 
+    public void outputResult(Result result) {
+        if (result.getCntNothing() > 0) {
+            outputNothing();
+            return;
+        }
 
-    public void outputBallCount(int ballCount) {
-        System.out.println(ballCount + StateMessage.BALL.getMessage());
+        System.out.println(outputBallStrikeCnt(result));
     }
 
-    public void outputStrikeCount(int strikeCount) {
-        System.out.println(strikeCount + StateMessage.STRIKE.getMessage());
+    public String outputBallStrikeCnt(Result result) {
+        return outputBallCount(result) + outputStrikeCount(result);
+    }
+
+    public String outputBallCount(Result result) {
+        if (result.getCntBall() > 0) {
+            return result.getCntBall() + StateMessage.BALL.getMessage();
+        }
+
+        return "";
+    }
+
+    public String outputStrikeCount(Result result) {
+        if (result.getCntStrike() > 0) {
+            return result.getCntStrike() + StateMessage.STRIKE.getMessage();
+        }
+
+        return "";
     }
 
     public void outputNothing(){
         System.out.println(StateMessage.NOTHING.getMessage());
     }
 
-    public void outputResult() {
+    public void outputEnd() {
         System.out.println(ViewMessage.RESULT_END.getMessage());
     }
 }

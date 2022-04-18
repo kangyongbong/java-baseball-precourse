@@ -7,8 +7,6 @@ public class InputView {
 
     public String inputNumber(){
         System.out.print(ViewMessage.INPUT_NUMBER.getMessage());
-
-        Console.readLine();
         return Console.readLine();
     }
 
