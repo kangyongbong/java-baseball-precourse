@@ -1,5 +1,6 @@
 package baseball.view;
 
+import baseball.constant.ErrorMessage;
 import baseball.constant.StateMessage;
 import baseball.constant.ViewMessage;
 import baseball.model.Result;
@@ -41,5 +42,9 @@ public class OutputView {
 
     public void outputEnd() {
         System.out.println(ViewMessage.RESULT_END.getMessage());
+    }
+
+    public void outputError(ErrorMessage errorMessage) {
+        System.out.println(errorMessage.getMessage());
     }
 }
