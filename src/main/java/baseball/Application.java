@@ -1,9 +1,13 @@
 package baseball;
 
-import baseball.constant.View;
+import baseball.constant.GameStatus;
+import baseball.controller.BaseBallController;
 
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        BaseBallController baseBallController = new BaseBallController();
+        do {
+            baseBallController.gameStart();
+        } while ( GameStatus.RESTART.equals( baseBallController.gameCheckRestart()) );
     }
 }
